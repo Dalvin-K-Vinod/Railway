@@ -70,6 +70,8 @@
 <div align="center"><b><h4>
 <?php 
 
+error_reporting(0);
+
 require "db.php";
 
 $pwd=$_POST["password"];

@@ -60,13 +60,18 @@
 
 
 
-<body style=" background-image: url(pnglogin.jpg);
+
+<body style=" background-image: url(pnglogin2.jpg);
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;">
+    background-size: cover;"> 
+
+    <div class="form2">
 
     <?php
+
+error_reporting(0);
 
     session_start();
 
@@ -93,16 +98,19 @@
         echo "No such train <br> ";
     }
     ?>
+    </div><br><center>
 
-    If you wish to proceed with booking fill in the following details:<br><br>
-    <form action="resvn.php" method="post">
-        Registered Mobile No: <input type="text" name="mno" required><br><br>
-        Password: <input type="password" name="password" required><br><br>
-        Enter Train No: <input type="text" name="tno" required><br><br>
-        Enter Class: <input type="text" name="class" required><br><br>
-        No. of Seats: <input type="text" name="nos" required><br><br>
-        <input type="submit" value="Proceed with Booking"><br><br>
-    </form>
+    <!--<p class="form3"><b>If you wish to proceed with booking fill in the following details:--></b></p></center>
+    <form action="resvn.php" method="post" class="form"><center>
+    <h1 class="login-title"><b>BOOK TICKET</h1>
+         <input type="text" class="login-input" name="mno" placeholder="Registered Mobile No:" required><br>
+        <input type="password" class="login-input" name="password" placeholder="password" required><br>
+         <input type="text" class="login-input" name="tno" placeholder="Enter Train No"  required><br>
+         <input type="text" class="login-input" name="class" placeholder="Enter Class:" required><br>
+         <input type="text" class="login-input" name="nos" placeholder="No. of Seats:" required><br>
+        <input type="submit" class="login-button" value="Proceed with Booking"><br>
+      </center>
+    </form></b>
 
     <?php
 

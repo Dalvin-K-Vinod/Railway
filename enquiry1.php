@@ -25,7 +25,7 @@
 
 </head>
 
-<body style=" background-image: url(userlogin.png);
+<body style=" background-image: url(USERLOGIN1.png);
     margin-top: 250px;
     height: 100%; 
     background-position: center;
@@ -70,13 +70,16 @@
 
 <?php
 
+error_reporting(0);
+
 session_start();
 $_SESSION=array();
 session_destroy();
 
 ?>
 <div align="center"> 
-<form action="enquiry_result1.php" method="post">
+<form action="enquiry_result1.php" method="post" class="form">
+<h1 class="login-title">Ticket Booking</h1><center>
 
 Starting Point: <select id="sp" name="sp" required>
         
@@ -132,9 +135,9 @@ require "db.php";
 <br><br>
      
 Date of Journey: <input type="date" name="doj" required><br><br>
-<input type="submit">
+<input type="submit" class="login-button">
 
 </form>
-<br><br><a href="http://localhost/railway/index.htm">logout</a>
+<br><br><a href="http://localhost/railway/index.htm">logout</center></a>
 </body>
 </html>

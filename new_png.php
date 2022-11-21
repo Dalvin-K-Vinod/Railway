@@ -63,9 +63,13 @@
     background-position: center;
     background-size: cover;">
     <!--background-repeat: no-repeat;-->
+    <br>
 
+    <form action="payment.php" class="form"><center>
 
   <?php
+
+error_reporting(0);
 
   session_start();
 
@@ -185,11 +189,13 @@ echo "<br><br><br><br><b><br><br><b>Total fare is Rs." . $tempfare . "/-";
     //echo "Enter Passanger Gender: <input type='text' name='pgender[]' required> <br> ";
   }
 
-  echo "<br><br><a href=\"http://localhost/railway/enquiry1.php\">new tickets</a> <br>";
-  echo "<br><br><a href=\"http://localhost/railway/index.htm\">logout</a> <br>";
-
+  //echo "<br><br><a href=\"http://localhost/railway/enquiry1.php\">new tickets</a> <br>";
+  //echo "<br><br><a href=\"http://localhost/railway/index.htm\">logout</a> <br>";
+   // echo "<br><br><a href=\"http://localhost/railway/payment.html\">payment</a> <br>";
   $conn->close();
   ?>
+  <input type="submit" class="login-button" value="payment"><br>
+    </center></form>
 
 </body>
 

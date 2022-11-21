@@ -25,7 +25,7 @@
 
 </head>
 
-<body style=" background-image: url(adminlogin.jpeg);
+<body style=" background-image: url(adminlogin2.jpeg);
     margin-top: 168px;
     height: 100%; 
     background-position: center;
@@ -48,9 +48,9 @@
       <nav class="top_nav_links navbar navbar-expand-lg">
               <div class="collapse navbar-collapse" id="topNav">
                   <ul class="navbar-nav">
-				  <li class="has-child">
+				  <!--<li class="has-child">
                       <a href="index.htm">Home</a></li>
-					<!--<li class="has-child">
+					<li class="has-child">
                       <li><a href="index.htm"> About Us </a></li>
                     </li>
 					<li class="has-child">
@@ -64,9 +64,16 @@
       
     </div>
   </header>
-<div align="center"><br><br><br>
+<br><br><br>
+
+<!--<form class="form"><center>
+<h1 class="login-title"><b>ADMIN LOGIN</h1>-->
 <?php 
+
+error_reporting(0);
+
 session_start();
+
 if($_POST["uid"]=='admin' AND $_POST["password"]=='admin' )
 {
 $_SESSION["admin_login"]=True;
@@ -74,10 +81,13 @@ $_SESSION["admin_login"]=True;
 
 if($_SESSION["admin_login"]==True)
 {
+  echo "<form class=\"form\"><br><center>
+  <h1 class=\"login-title\"><b>ADMIN</h1>" ;
+  
 echo " <br><a href=\"http://localhost/railway/insert_into_stations.php\"> Show All Stations </a><br> ";
 echo " <br><a href=\"http://localhost/railway/show_trains.php\"> Show All Trains </a><br> ";
 echo " <br><a href=\"http://localhost/railway/show_users.php\"> Show All Users </a><br> ";
-echo " <br><a href=\"http://localhost/railway/insert_into_train_3.php\"> Enter New Train </a><br> ";
+echo " <br><a href=\"http://localhost/railway/classseats.php\">Show class seats </a><br> ";
 echo " <br><a href=\"http://localhost/railway/insert_into_classseats_3.php\"> Enter Train Schedule </a><br> ";
 echo " <br><a href=\"http://localhost/railway/booked.php\"> View all booked tickets </a><br> ";
 echo " <br><a href=\"http://localhost/railway/cancelled.php\"> View all cancelled tickets </a><br> ";
@@ -87,53 +97,21 @@ else
 {
 
 echo "
-<form action=\"admin_login.php\" method=\"post\"><br><br><br>
-User ID: <input type=\"text\" name=\"uid\" required><br><br>
-Password: <input type=\"password\" name=\"password\" required><br><br><br><br>
-<input type=\"submit\">
-</form>
-";
+<form action=\"admin_login.php\" method=\"post\" class=\"form\"><br><center>
+<h1 class=\"login-title\"><b>ADMIN LOGIN</h1>
+<input type=\"text\" placeholder=\"User ID: \" class=\"login-input\" name=\"uid\" required><br><br>
+<input type=\"password\" placeholder=\"Password: \"class=\"login-input\" name=\"password\" required><br><br><br><br>
+<input type=\"submit\"class=\"login-button\" value=\"SUBMIT\"></center>
+</form>";
+echo "
+<form action=\"index.htm\"><br><center><input type=\"submit\"class=\"login-button\" value=\"HOME\"></center>";
 }
 
 
 ?>
-    <!-- Start Footer -->
-    <div id="footer"></div><br>
-	<footer>
-      <div class="container">
-        <div class="row">
 
-          <div class="col-md-9">
-            <h3>Quick Links</h3>
-            <div class="row">
-              <div class="col-md-2">
-                <ul class="quicklinks">
-                  <li><a href="http://localhost/railway/index.htm">Home</a></li>
-                  <li><a href="http://localhost/railway/index.htm">Home</a></li>
-                  <!--<li><a href="about.html" target="_blank"> About Us </a></li>
-				  <li><a href="http://localhost/railway/user_login.htm" target="_blank"> Login </a></li>
-				  <li><a href="http://localhost/railway/new_user_form.html" target="_blank"> Register </a></li>
-				  <li><a href="contact.html" target="_blank"> Contact Us </a></li>-->
-                  </ul>              
-              </div>
-              
-              <!--<div class="col-md-2">
-                <ul class="quicklinks">
-                  <li><a href="http://localhost/railway/admin_login.php">Admin Login </a></li>
-                  <li><a href="https://www.irctctourism.com/" target="_blank"> Tourism </a></li>
-                  <li><a href="https://www.irctc.co.in/nget/train-search" target="_blank"> Train Ticket</a></li>
-                  <li><a href="https://www.ecatering.irctc.co.in/" target="_blank"> E Catering </a></li>
-				   </ul>              
-              </div>-->
-              <div class="col-md-2">
-			  <img src="assets/images/irctc-new-logo.png">
-			  </div>
-            </div>
-          </div>
-        </div>
-      </div>
-<div class="copyright">© 2021 IRCTC | MINI PROJECT BY Himanshu, Mayank, Yogesh.</div>
-</footer>
-</div>
+</center>
+</form></b>
+
 </body>
 </html>

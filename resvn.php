@@ -58,7 +58,7 @@
     </div>
   </header>
 
-<body style=" background-image: url(pnglogin.jpg);
+<body style=" background-image: url(pnglogin2.jpg);
 margin-top: 368px;
     height: 100%; 
     background-position: center;
@@ -66,9 +66,11 @@ margin-top: 368px;
     background-size: cover;">
 
 
-    <form action="new_png.php" method="post">
+    <form action="new_png.php" method="post" class="form2">
 
         <?php
+
+error_reporting(0);
 
         session_start();
 
@@ -136,8 +138,8 @@ margin-top: 368px;
         $conn->close();
 
         ?>
-        <div align="center">
-        <br><br><input type="submit" value="Book"></div>
+        <div><center>
+       <input type="submit" class="login-button2" value="Book"></center><br></div></form>
 </body>
 
 </html>

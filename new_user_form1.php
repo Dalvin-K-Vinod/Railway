@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>|| IRCTC ||</title>
+  <title>|| IRCTC Corporate Portal ||</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <!--Main style css-->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/style2.css"> 
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  <link rel="stylesheet" href="assets/css/style2.css">
   <!--Responsive style css-->
   <link rel="stylesheet" href="assets/css/responsive.css"> 
     
@@ -25,6 +25,13 @@
 
 </head>
 
+<!--head-->
+<body style=" background-image: url(userlogin.png);
+    margin-top: 268px;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;" >
 
 <div id="headers"></div>
 <header class="main_header fixed_header">
@@ -39,61 +46,56 @@
         </button>
       </div>
             
+      
       <nav class="top_nav_links navbar navbar-expand-lg">
               <div class="collapse navbar-collapse" id="topNav">
                   <ul class="navbar-nav">
 				  <!--<li class="has-child">
                       <a href="index.htm">Home</a></li>
-					<li class="has-child">-->
-                      <li><a href="logout.php"> Logout </a></li>
+					<li class="has-child">
+                      <li><a href="index.htm"> About Us </a></li>
                     </li>
-					<!--<li class="has-child">s
+					<li class="has-child">
                       <a href="http://localhost/railway/user_login.htm">Login</a>
 					  <li><a href="http://localhost/railway/new_user_form.html">Register</a></li>
-                      <li><a href="http://localhost/railway/enquiry.php">More Enquiry </a></li>-->
+                      <li><a href="http://localhost/railway/enquiry.php">Ticket Booking </a></li>-->
 
                   </ul>
               </div>
       </nav>
-      
+
+
     </div>
   </header>
-
-<body style=" background-image: url(adminlogin.jpeg);
-    height: 100%; 
-    background-position: center;
-    background-size: cover;">
-    <br><br><br> 
-
-
-<div class="form2"><center>
-
-<?php
+<div align="center"><b><h4>
+<?php 
 
 error_reporting(0);
 
 require "db.php";
 
-$query="SELECT * FROM resv where status='BOOKED' ";
-$result=mysqli_query($conn,$query);
+$pwd=$_POST["password"];
+$eid=$_POST["emailid"];
+$mno=$_POST["mobileno"];
+$dob=$_POST["dob"];
 
-echo "<table><thead><td>PNR</td><td>Id</td><td>Train_no</td><td>Date_Of_Journey</td><td>Fare</td><td>Train_Class</td><td>Seats</td><td>Status</td></thead>";
+$sql = "INSERT INTO user (password,emailid,mobileno,dob) VALUES ('".$pwd."','".$eid."','".$mno."','".$dob."')";
+// echo $sql;
 
-while ($row=mysqli_fetch_array($result))
+if ($conn->query($sql) === TRUE) 
+
 {
-echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td>".$row[7]."</td><td>".$row[8]."</td><td>".$row[9]."</td></tr>";
+    echo  "Hi $eid, <br><br><br><br><a href=\"http://localhost/railway/show_users.php\"> Click here </a>go back " ;
+} 
+else 
+{
+ echo "Error:" . $conn->error. "<br> <a href=\"http://localhost/railway/new_user_form1.html\">Go Back to Register!!!</a> ";
 }
 
-echo "</table>";
-
-echo "<br> <a href=\"http://localhost/railway/admin_login.php\">Go Back to Admin Menu!!!</a> ";
-
-$conn->close();
+$conn->close(); 
 ?>
-</center>
+</h4>
+</b>
 </div>
 </body>
 </html>
-
-
-

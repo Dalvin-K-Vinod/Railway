@@ -7,6 +7,8 @@
 <div align="center">
 <?php 
 
+error_reporting(0);
+
 echo " <br><a href=\"http://localhost/railway/insert_into_stations.php\"> Show All Station </a><br> ";
 echo " <br><a href=\"http://localhost/railway/insert_into_train_1.php\"> Enter New Train </a><br> ";
 echo " <br><a href=\"http://localhost/railway/insert_into_classseats_1.php\"> Enter Train Schedule </a><br> ";
