@@ -64,6 +64,7 @@
       
     </div>
   </header>
+  <div class="form2">
 <b><center>
 
 <?php 
@@ -123,7 +124,7 @@ if(mysqli_num_rows($query) == 0)
 }
 
 ?></center>
-</b>
+</b></div>
 <form action="cancel.php" method="post" class="form">
 <h1 class="login-title">Ticket Cancellation</h1><center>
 Enter PNR for Cancellation: <input type="text" class="login-input" name="cancpnr" placeholder="pnr Number" required><br><br>
